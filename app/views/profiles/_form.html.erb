@@ -18,22 +18,22 @@
 
   <div class="field">
     <%= form.label :instagram_username %>
-    <%= form.text_field :instagram_username %>
+    @<%= form.text_field :instagram_username %>
   </div>
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select(:gender, options_for_select(['Male', 'Female', 'Other']), :include_blank => "Please select a gender..") %>
+    <%= form.select(:gender, options_for_select(['Male', 'Female', 'Other']), :include_blank => "Select a gender..") %>
   </div>
 
   <div class="field">
     <%= form.label :age_bracket %>
-    <%= form.select(:age_bracket, options_for_select(['18-25', '25-35', '35-45', '45+']), :include_blank => "Please select a lifestyle..") %>
+    <%= form.select(:age_bracket, options_for_select(['18-25', '25-35', '35-45', '45+']), :include_blank => "Select an age bracket..") %>
   </div>
 
   <div class="field">
     <%= form.label :lifestyle %>
-    <%= form.select(:lifestyle, options_for_select(['Bodybuilder', 'Fitness Model', 'Powerlifter','Athlete','Swimmer', 'Cyclist', 'Sport Player', 'Vegan']), :include_blank => "Please select an age bracket..") %>
+    <%= form.select(:lifestyle, options_for_select(['Bodybuilder', 'Fitness Model', 'Powerlifter','Athlete','Swimmer', 'Cyclist', 'Sports Player', 'Martial Artist', 'Vegan']), :include_blank => "Select a lifestyle..") %>
   </div>
 
 
