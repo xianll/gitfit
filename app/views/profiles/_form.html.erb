@@ -22,24 +22,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :age_bracket %>
-    <%= form.text_field :age_bracket %>
+    <%= form.label :gender %>
+    <%= form.select(:gender, options_for_select(['Male', 'Female', 'Other']), :include_blank => "Please select a gender..") %>
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.label :age_bracket %>
+    <%= form.select(:age_bracket, options_for_select(['18-25', '25-35', '35-45', '45+']), :include_blank => "Please select a lifestyle..") %>
   </div>
 
   <div class="field">
     <%= form.label :lifestyle %>
-    <%= form.text_field :lifestyle %>
+    <%= form.select(:lifestyle, options_for_select(['Bodybuilder', 'Fitness Model', 'Powerlifter','Athlete','Swimmer', 'Cyclist', 'Sport Player', 'Vegan']), :include_blank => "Please select an age bracket..") %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
