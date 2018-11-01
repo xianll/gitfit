@@ -18,28 +18,24 @@
 
   <div class="field">
     <%= form.label :instagram_username %>
-    <%= form.text_field :instagram_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age_bracket %>
-    <%= form.text_field :age_bracket %>
+    @<%= form.text_field :instagram_username %>
   </div>
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.select(:gender, options_for_select(['Male', 'Female', 'Other']), :include_blank => "Select a gender..") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age_bracket %>
+    <%= form.select(:age_bracket, options_for_select(['18-25', '25-35', '35-45', '45+']), :include_blank => "Select an age bracket..") %>
   </div>
 
   <div class="field">
     <%= form.label :lifestyle %>
-    <%= form.text_field :lifestyle %>
+    <%= form.select(:lifestyle, options_for_select(['Bodybuilder', 'Fitness Model', 'Powerlifter','Athlete','Swimmer', 'Cyclist', 'Sports Player', 'Martial Artist', 'Vegan']), :include_blank => "Select a lifestyle..") %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
