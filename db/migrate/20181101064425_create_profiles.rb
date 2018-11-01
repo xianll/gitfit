@@ -1,6 +1,6 @@
-class CreateSellerInfos < ActiveRecord::Migration[5.2]
+class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
-    create_table :seller_infos do |t|
+    create_table :profiles do |t|
       t.text :biography
       t.string :instagram_username
       t.string :age_bracket
