@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @profile.biography %>
+</p>
+
+<p>
+  <strong>Instagram username:</strong>
+  <%= @profile.instagram_username %>
+</p>
+
+<p>
+  <strong>Age bracket:</strong>
+  <%= @profile.age_bracket %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Lifestyle:</strong>
+  <%= @profile.lifestyle %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
