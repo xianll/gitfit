@@ -16,8 +16,16 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @product.user %>
+  <strong>By:</strong>
+  <br>
+  <%= link_to(@product.user.profile) do %>
+    <%= @product.user.email %>
+  <% end %>
+  <br>
+  <%= link_to(@product.user.profile) do %>
+    <%= @product.user.profile.instagram_username %>
+  <% end %>
+  
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
