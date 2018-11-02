@@ -10,12 +10,12 @@
   </head>
 
   <body>
-    <p> Welcome <%= current_user.email %></p>
     <% if user_signed_in? %>
       <% if current_user.profile == nil %>
-        <%= link_to('Become A Seller', new_profile_path)  %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
+      <%= link_to('Become A Seller', new_profile_path)  %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
       <% else %>
+      Welcome <%= current_user.email %>
         <%= link_to('Sell Your Program', new_product_path)  %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
       <% end %>      
