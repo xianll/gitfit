@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gitfit</title>
+    <title>GitFit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <p> Welcome <%= current_user.email %></p>
     <% if user_signed_in? %>
       <% if current_user.profile == nil %>
         <%= link_to('Become A Seller', new_profile_path)  %>
