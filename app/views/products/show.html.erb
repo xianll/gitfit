@@ -11,6 +11,10 @@
 </p>
 
 <p>
+  <%= image_tag(@product.image, width: '300') %>
+</p>
+
+<p>
   <strong>Price:</strong>
   <%= number_to_currency(@product.price/ 100.0) %>
 </p>
