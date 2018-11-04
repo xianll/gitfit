@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   root 'profiles#index'
+  devise_for :users
   resources :profiles
   resources :products
-  devise_for :users, controllers: {
-    :sessions => "users/sessions",
-    :registrations => "users/registrations" }
   resources :charges
   get '/users/:id', to: 'users#account'
   
