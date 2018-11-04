@@ -30,5 +30,10 @@
   <%= @profile.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+
+
+<% if current_user == @profile.user %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% end %>
+
 <%= link_to 'Back', profiles_path %>
