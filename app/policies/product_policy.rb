@@ -1,10 +1,4 @@
 class ProductPolicy < ApplicationPolicy
-  # class Scope < Scope
-  #   def resolve
-  #     scope.all
-  #   end
-  # end
-
   attr_reader :user, :product
 
   def initialize(user, product)
