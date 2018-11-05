@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @user = @profile.user
   end
 
   # GET /profiles/new
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    authorize @profile
   end
 
   # POST /profiles
@@ -54,6 +56,7 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
+    authorize @profile
     @profile.destroy
     respond_to do |format|
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }

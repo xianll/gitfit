@@ -30,5 +30,14 @@
   <%= @profile.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% @user.products.each do |product| %>
+  <%= image_tag(product.image, width: '300') %>
+  <%= product.title %>
+  <%= product.description %>
+  <% end %>
+
+<% if current_user == @profile.user %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <td><%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
 <%= link_to 'Back', profiles_path %>
