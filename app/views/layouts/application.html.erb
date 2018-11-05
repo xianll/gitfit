@@ -12,6 +12,7 @@
   <body>
     <p> Welcome <%= current_user.email %></p>
     <% if user_signed_in? %>
+    <p> Welcome <%= current_user.email %></p>
       <% if current_user.profile == nil %>
         <%= link_to('Become A Seller', new_profile_path)  %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  

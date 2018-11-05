@@ -66,6 +66,7 @@ gem "devise", "~> 4.5"
 
 
 gem "aws-sdk-s3"
+gem "pundit", "~> 2.0"
 
 gem "pundit", "~> 2.0"
 
