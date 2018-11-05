@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <p> Welcome <%= current_user.email %></p>
     <% if user_signed_in? %>
     <p> Welcome <%= current_user.email %></p>
       <% if current_user.profile == nil %>
