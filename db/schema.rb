@@ -68,7 +68,10 @@ ActiveRecord::Schema.define(version: 2018_11_04_030038) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
