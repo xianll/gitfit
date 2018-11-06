@@ -18,12 +18,10 @@ class ChargesController < ApplicationController
             :currency    => 'aud',
         )
         
-        if charge.paid
             Order.create(
-                product_id: :product_id,
-                user_id: current_user,
+                product_id: @product.id,
+                user_id: current_user.id,
                 purchase_price: @product.price)
-        end
         
     rescue Stripe::CardError => e
         flash[:error] = e.message
