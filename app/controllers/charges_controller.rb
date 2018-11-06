@@ -18,15 +18,18 @@ class ChargesController < ApplicationController
             :currency    => 'aud',
         )
         
+        if charge.paid
+            Order.create(
+                product_id: :product_id,
+                user_id: current_user,
+                purchase_price: @product.price)
+        end
+        
     rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to new_charge_path
         
-        @order = Order.new(order_params)
-        @order.product_id = @product
-        @order.user = current_user
-        @order.purchase_price = @product.price 
-        @order.save
+
         # respond_to do |format|
     #   if @order.save
     #     format.html { redirect_to @product, notice: 'Program was successfully purchased.' }
@@ -37,16 +40,16 @@ class ChargesController < ApplicationController
     #   end
     end
 
-    private
-    # # Use callbacks to share common setup or constraints between actions.
-    # def set_order
-    #   @product = Product.find(params[:id])
-    # end
+    # private
+    # # # Use callbacks to share common setup or constraints between actions.
+    # # def set_order
+    # #   @product = Product.find(params[:id])
+    # # end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      result = params.require(:order).permit(:purchase_price, :user_id, :product_id)
-      result[:purchase_price] = result[:purchase_price].to_f * 100.0
-      result
-    end
+    # # Never trust parameters from the scary internet, only allow the white list through.
+    # def order_params
+    #   result = params.require(:order).permit(:purchase_price, :user_id, :product_id)
+    #   result[:purchase_price] = result[:purchase_price].to_f * 100.0
+    #   result
+    # end
 end
