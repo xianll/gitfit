@@ -1,1 +1,27 @@
 <h2>Thanks <%=current_user.email%>, you paid for: <%=@product.title%> <strong><%=number_to_currency(@product.price/100.0)%></strong>!</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Created By</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+    <tbody>
+        <%# <% @products.each do |product| %> %>
+            <tr>
+                <td><%= image_tag(@product.image, width: '300') %></td>
+                <td><%= @product.title %></td>
+                <td><%= @product.description %></td>
+                <td><%= @product.price %></td>
+                <td><%= @product.user.email %></td>
+                <td><%= @product.user.profile.instagram_username %></td>
+                <td><%= link_to 'Show', product %></td>
+            </tr>
+        <%# <% end %> %>
+    </tbody>

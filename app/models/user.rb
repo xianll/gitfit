@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :validatable, stretches: 12
   has_many :products
   has_one :profile
+  has_many :orders
   validates :first_name, presence: true
   validates :last_name, presence: true 
   # has_many :orders, :dependent => :destroy
