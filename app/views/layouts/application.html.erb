@@ -4,12 +4,62 @@
     <title>GitFit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+    <%= link_to image_tag('gitfit_logo.png'), root_path, class: "navbar-brand px-3" %>
+   
+    <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="nav">
+    <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to('Home', root_path, class: "nav-link text-light text-uppercase font-weight-bold px-3")  %></li>
+        <li class="nav-item"><%= link_to('All Profiles', profiles_path, class: "nav-link text-light text-uppercase font-weight-bold px-3")  %></li>
+        <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Lifestyles</a>
+            <div class="dropdown-menu">
+              <%= link_to('Bodybuilder', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Fitness Model', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Powerlifter', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Athlete', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Swimmer', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Sport', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Martial Arts', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Vegan', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Dad Bod', profiles_path, class: "dropdown-item")  %>
+            </div>
+        </li>
+         <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Age Bracket</a>
+            <div class="dropdown-menu">
+              <%= link_to('18-25', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('25-35', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('35-45', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('45+', profiles_path, class: "dropdown-item")  %>
+            </div>
+        </li>
+         <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Gender</a>
+            <div class="dropdown-menu">
+              <%= link_to('Male', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Female', profiles_path, class: "dropdown-item")  %>
+              <%= link_to('Other', profiles_path, class: "dropdown-item")  %>
+        </li>
+      </ul>
+
+      <form class="form-inline ml-3">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-append">
+            <button type="button" class="btn"><i class="fas fa-search text-muted"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </nav>
     <% if user_signed_in? %>
     <p> Welcome <%= current_user.email %></p>
       <% if current_user.profile == nil %>
@@ -24,6 +74,10 @@
       <%= link_to('Login', new_user_session_path)  %>  
       <%= link_to('Sign Up', new_user_registration_path)  %>
     <% end %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <%= yield %>
   </body>
 </html>
