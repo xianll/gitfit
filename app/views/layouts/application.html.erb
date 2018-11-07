@@ -28,10 +28,10 @@
       <div class="collapse navbar-collapse justify-content-end text-uppercase font-weight-bold" id="myNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+            <%= link_to('Home', root_path, class: "nav-link m-2 menu-item")  %>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link m-2 menu-item" href="#">All Profiles</a>
+            <%= link_to('All Profiles', profiles_path, class: "nav-link m-2 menu-item")  %>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link m-2 menu-item dropdown-toggle" data-toggle="dropdown">Lifestyles</a>
@@ -110,7 +110,9 @@
     <!-- end of navbar -->
   </header>
   <!-- end of header -->
-
+  <div id="bg">
+    <%= image_tag("background_image.jpg") %>
+  </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

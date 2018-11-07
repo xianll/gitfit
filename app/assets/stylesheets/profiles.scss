@@ -108,7 +108,19 @@ body {
   }
 
   /* end of navbar */
+  
+  /* form */
+  .blacktext {
+      color: black;
+  }
 
+  .whitetext {
+        
+  }
+
+
+  /* end of form */
+  
   .notice {
     color: rgba(255, 255, 158, 0.865);
     margin: 0;
@@ -167,7 +179,11 @@ body {
     }
   }
   /* end of banner */
-  
+  .form-top {
+      margin-top: 150px;
+      display: flex;
+      justify-content: center;
+  }
   /* end of header */
   
   /* mission */
