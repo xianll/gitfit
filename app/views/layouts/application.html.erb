@@ -4,12 +4,17 @@
     <title>GitFit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="turbolinks-visit-control" content="reload">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+       <%= stylesheet_link_tag    'profiles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'profiles', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
+
+  
 
   <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
     <%= link_to image_tag('gitfit_logo.png'), root_path, class: "navbar-brand px-3" %>
@@ -58,8 +63,7 @@
         </div>
       </form>
     </div>
-
-  </nav>
+    <div>
     <% if user_signed_in? %>
     <p> Welcome <%= current_user.email %></p>
       <% if current_user.profile == nil %>
@@ -74,6 +78,9 @@
       <%= link_to('Login', new_user_session_path)  %>  
       <%= link_to('Sign Up', new_user_registration_path)  %>
     <% end %>
+    </div>
+  </nav>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
