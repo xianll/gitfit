@@ -14,16 +14,16 @@ Please refer to the short answer question 1 & 2
 
 **Functionality / features**  
 + Landing page with fade-in animations.  
-![Landing Page](../docs/gitfit_landing.png)  
+![Landing Page](docs/gitfit_landing.png)  
 
 + A Navbar that makes navigating the site and filtering through categories quick and easy.  
-![Navbar](../docs/gitfit_nav.png "gitfit navbar")
+![Navbar](docs/gitfit_nav.png "gitfit navbar")
 
 + Ability to browse profiles and products without having to sign up.  
-![Profiles](../docs/gitfit_profiles.png "gitfit Profiles Page")
+![Profiles](docs/gitfit_profiles.png "gitfit Profiles Page")
 
 + In-broswer product editing capability.   
-![Built in editor](../docs/gitfit_product_editor.png "Built-in Editor")
+![Built in editor](docs/gitfit_product_editor.png "Built-in Editor")
 
 + Providing your Instagram handle will pull your Instagram profile picture to serve as your gitfit profile picture.
 
@@ -42,16 +42,16 @@ Please refer to the short answer question 15.
 **A workflow diagram of the user journey/s.**  
 Journey to becoming a seller as a user and unregistered user.  
 
-![User Journey](../docs/user_journey.png "User Journey")  
-![Unregistered User Journey](../docs/unregistered_user_journey.png "Unregistered User Journey")  
+![User Journey](docs/user_journey.png "User Journey")  
+![Unregistered User Journey](docs/unregistered_user_journey.png "Unregistered User Journey")  
 
 **Wireframes**  
 Our end product ended up deviating from our initial wireframes but the basic UI functions remain the same.  
-![Initial wireframes](../docs/initial_wireframes.png "Wireframes")
+![Initial wireframes](docs/initial_wireframes.png "Wireframes")
 
-![Wireframes](../docs/wireframes1.png "Wireframes")
+![Wireframes](docs/wireframes1.png "Wireframes")
 
-![Wireframes](../docs/wireframes2.png "Wireframes")
+![Wireframes](docs/wireframes2.png "Wireframes")
 
 
 **Database Entity Relationship Diagrams**  
@@ -143,8 +143,8 @@ As each of the following models need to reference the user model, the user model
 
 **14. Provide your database schema design.**  
 The intial schema 
-![Initial](../docs/initial_db.png "Initial schema")The final schema
-![Final](../docs/db_schema.png "Final Schema")
+![Initial](docs/initial_db.png "Initial schema")The final schema
+![Final](docs/db_schema.png "Final Schema")
 
 **15. Provide User stories for your App.**  
 
@@ -161,7 +161,7 @@ The intial schema
 **17. Describe the way tasks are allocated and tracked in your project.**  
 
 At the start of the project, we made broad topics that needed to be covered on our Trello.
-![Trello](../docs/gitfit_trello.png "Trello")
+![Trello](docs/gitfit_trello.png "Trello")
 We conducted a stand-up each morning and decided on what we wanted to work on for the day. We would write goals for the day on a whiteboard and aim to achieve these by the end of the day. These goals will correspond with the tasks on trello and will move from the 'Doing' to 'Done' lists as we achieve them.  
 
 In the initial stages of development, we did a lot of mob programming, as we needed to lay the building blocks for our app. As the project became more complex and there was more to do, each member would work on specific features on their own or would pair-program on particularly harder tasks.
