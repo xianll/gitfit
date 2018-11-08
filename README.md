@@ -42,16 +42,16 @@ Please refer to the short answer question 15.
 **A workflow diagram of the user journey/s.**  
 Journey to becoming a seller as a user and unregistered user.  
 
-![User Journey](docs/user_journey.png "User Journey")  
-![Unregistered User Journey](docs/unregistered_user_journey.png "Unregistered User Journey")  
+![User Journey](docs/user_journey.jpg "User Journey")  
+![Unregistered User Journey](docs/unregistered_user_journey.jpg "Unregistered User Journey")  
 
 **Wireframes**  
 Our end product ended up deviating from our initial wireframes but the basic UI functions remain the same.  
-![Initial wireframes](docs/initial_wireframes.png "Wireframes")
+![Initial wireframes](docs/initial_wireframes.jpg "Wireframes")
 
-![Wireframes](docs/wireframes1.png "Wireframes")
+![Wireframes](docs/wireframes1.jpg)
 
-![Wireframes](docs/wireframes2.png "Wireframes")
+![Wireframes](docs/wireframes2.jpg)
 
 
 **Database Entity Relationship Diagrams**  
