@@ -239,6 +239,10 @@ body {
     padding-top: 140px;
 }
 
+.container-pro {
+  padding-top: 50px;
+}
+
 .hr-profile {
     width: 300px;
     border: 3px solid #434444;
@@ -249,16 +253,39 @@ body {
     padding-bottom: 20px;
     padding-top: 20px;
 }
-
-.profile-grid:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.card {
+  background: rgba(0, 0, 0, .15);
+  border-radius: 4%;
+  align-content: center;
+}
+.cardshow {
+  background:transparent;
+  border-radius: 4%;
+  align-content: center;
+  width: 350px;
 }
 
-.profile-image{
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 15%;
+.card:hover{
+    box-shadow: 0 4px 8px 0 rgba(56, 213, 218, 0.372), 0 6px 20px rgba(56, 213, 218, 0.386);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.reframe {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.rfimg img {
+  position: relative;
+  height: 350px;
+  width: auto;
 }
 
 .overlay{
@@ -274,8 +301,12 @@ body {
     background-color: rgba(67, 68, 68, 0.7);
 }
 
-.profile-image:hover .overlay{
+.reframe img:hover .overlay{
     opacity: 1;
+}
+
+.image {
+  position: relative;
 }
 
 .detail {
