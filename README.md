@@ -61,7 +61,7 @@ Please refer to short answer quesiton 14.
 Please refer to short answer quesiton 17.
 
 ## Short Answer Questions
----
+
 **1. What is the need (i.e. challenge) that you will be addressing in your project?**<br/>
 
 Our app is called GitFit, and like YouTube or Instagram, GitFit makes it possible for influencers to profit from sharing their lifestyles with their audience, but through a written medium (which allows for easier and more detailed dissemination of details) instead of video or picture posts. The aim of our app is to connect people to their fitness idols and make their personal health goals easier to achieve. To do this, we are diversifying our supply pool by welcoming people of all backgrounds and disciplines to share their story with potential customers; whether they are a martial artist, gymnast or vegan. 
