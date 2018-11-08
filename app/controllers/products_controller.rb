@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    if !current_user.profile
+      redirect_to "/profiles"
+    else 
+    end
   end
 
   # GET /products/new

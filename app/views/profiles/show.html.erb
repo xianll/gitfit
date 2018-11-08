@@ -36,7 +36,9 @@
       <%= image_tag(product.image, width: '300') %>
       <%= product.title %>
       <%= product.description %>
+      <%if current_user == @profile.user %>
       <%= link_to "View Product", product %>
+        <%end%>
       <%= form_tag charges_path do %>
       <article>
         <% if flash[:error].present? %>
@@ -46,13 +48,15 @@
         <% end %>
       </article>
       <%= hidden_field_tag(:product_id, product.id)%>
+      <% if current_user == @profile.user %>
+      <%else%>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description="<%product.title%>"
               data-amount="<%product.price%>"
               data-currency=AUD
               data-locale="auto"></script>
-
+        <%end%>
     <% end %>
       <% end %>
 
