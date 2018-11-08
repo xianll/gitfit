@@ -48,10 +48,12 @@
         <% end %>
       </article>
       <%= hidden_field_tag(:product_id, product.id)%>
-<%# <% if Order.where(user:current_user, product: product).exists? %> %>
-<% if current_user.orders.select{ |p| p.product_id == product.id }.length > 0 %>
-    <%=sanitize product.content%>
-<% end %>
+
+  <% if user_signed_in? %>
+
+  <% if current_user.orders.select{ |p| p.product_id == product.id }.length > 0 %>
+      <%=sanitize product.content%>
+  <% end %>
 
       <% if current_user == @profile.user %>
 
@@ -70,5 +72,6 @@
       <td><%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
     <%= link_to 'Back', profiles_path %>
+    <% end %>
   </div>
 </div>

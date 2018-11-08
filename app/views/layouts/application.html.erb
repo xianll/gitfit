@@ -19,7 +19,7 @@
     <!-- navbar -->
     <div class="notice navbar navbar-expand-lg fixed-top nav-menu"><%= notice %>
     <% if user_signed_in? %>
-      <div href="" class="welcome">Welcome, <%= current_user.first_name %>!</div>
+      <div href="" class="welcome">Welcome, <%= current_user.email %>!</div>
     <% end %>
     </div>
     <nav class="navbar navbar-expand-lg fixed-top nav-menu">
