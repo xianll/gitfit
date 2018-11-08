@@ -48,7 +48,12 @@
         <% end %>
       </article>
       <%= hidden_field_tag(:product_id, product.id)%>
+<% if current_user.orders.select{ |p| p.product_id == product.id }.length > 0 %>
+    <%=sanitize product.content%>
+<% end %>
+
       <% if current_user == @profile.user %>
+
       <%else%>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -59,7 +64,6 @@
         <%end%>
     <% end %>
       <% end %>
-
     <% if current_user == @profile.user %>
       <%= link_to 'Edit', edit_profile_path(@profile) %> |
       <td><%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

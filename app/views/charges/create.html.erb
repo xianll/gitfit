@@ -1,4 +1,4 @@
 <br><br><br><br><br><br><br><br>
 <h2>Thanks <%=current_user.email%>, you paid for: <%=@product.title%> <strong><%=number_to_currency(@product.price/100.0)%></strong>!</h2>
 <br>
-<h2> View Purchased item </h2>
+<h2> View Purchased item <%=link_to "view product", profile_path(@product) %> </h2>
