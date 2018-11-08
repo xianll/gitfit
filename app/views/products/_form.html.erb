@@ -19,7 +19,11 @@
 
   <div class="field form-group">
     <%= form.label :description %>
+<<<<<<< HEAD
+    <%= form.text_area :description, id: 'editor' %>
+=======
     <%= form.text_area :description, :placeholder => "Confirm password", class: "form-control" %>
+>>>>>>> 3fbeddb9820992c3848ebbc8cce00d4f394c63b6
   </div>
 
   <div class="field form-group">
@@ -27,9 +31,15 @@
     <%= form.file_field :image, class: "form-control" %>
   </div>
 
+<<<<<<< HEAD
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+=======
     <%= form.label :content %>
   <div class="field form-group blacktext">
     <%= form.text_area :content, id: 'editor', :placeholder => "Create your custom program here..", class: "blacktext" %>
+>>>>>>> 3fbeddb9820992c3848ebbc8cce00d4f394c63b6
   </div>
 
   <div class="field form-group">
