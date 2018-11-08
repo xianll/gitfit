@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= ENV["AWS_KEY"] %>
   secret_access_key: <%= ENV["AWS_SECRET"] %>
   region: ap-southeast-2
-  bucket: git-fit
+  bucket: rails-melb-petgram
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
