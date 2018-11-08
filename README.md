@@ -14,7 +14,7 @@ Please refer to the short answer question 1 & 2
 
 **Functionality / features**  
 + Landing page with fade-in animations.  
-![Landing Page](../docs/gitfit_landing.png "gitfit Landing Page")  
+![Landing Page](../docs/gitfit_landing.png)  
 
 + A Navbar that makes navigating the site and filtering through categories quick and easy.  
 ![Navbar](../docs/gitfit_nav.png "gitfit navbar")
