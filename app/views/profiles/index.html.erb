@@ -1,50 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container form-top">
+    <h1>Profiles</h1>
 
-
-    <header>
-    <!-- banner -->
-    <div class="text-light text-md-right text-center banner">
-      <h1 class="display-4 banner-heading">Welcome to <span class="display-3">gitfit</span></h1>
-      <p class="lead banner-par">Your new lifestyle starts here</p>
-    </div>
-    <!-- end of banner -->
-  </header>
-  <!-- end of header -->
-
-<h1>Profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Biography</th>
-      <th>Instagram username</th>
-      <th>Age bracket</th>
-      <th>Gender</th>
-      <th>Lifestyle</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.biography %></td>
-        <td><%= profile.instagram_username %></td>
-        <td><%= profile.age_bracket %></td>
-        <td><%= profile.gender %></td>
-        <td><%= profile.lifestyle %></td>
-        <td><%= profile.user.email %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <% if current_user == profile.user %>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Profile', new_profile_path %>
+        <% @profiles.each do |profile| %>
+            <%= profile.biography %>
+            <%= profile.instagram_username %>
+            <%= profile.age_bracket %>
+            <%= profile.gender %>
+            <%= profile.lifestyle %>
+            <%= profile.user.email %>
+            <%= link_to 'Show', profile %>
+            <% if current_user == profile.user %>
+            <%= link_to 'Edit', edit_profile_path(profile) %>
+            <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        <% end %> 
+</div>
