@@ -17,7 +17,7 @@
   </div>
 
   <div>
-    <%= form.label :instagrm %>
+    <%= form.label :instagram %>
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text">@</div>
@@ -25,6 +25,10 @@
          <%= form.text_field :instagram_username, class:"form-control", id:"inlineFormInputGroupUsername", :placeholder =>"Username" %>
       </div>
     </div>
+      <div class="field form-group">
+        <%= form.label :profile_picture %>
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
 
       <div class="field form-group">
         <%= form.label :age_bracket %>

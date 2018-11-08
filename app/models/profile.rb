@@ -7,6 +7,8 @@ class Profile < ApplicationRecord
   validates :biography, presence: true
   validates :instagram_username, presence: true 
   validates :gender, presence: true
+  has_one_attached :image
+  validate :image_type
 
   def grab_image
     source = open("http://www.instagram.com/#{instagram_username}/"){|f|f.read}
@@ -25,4 +27,15 @@ class Profile < ApplicationRecord
   #   description_split = lines[0].split('"')
   #   current_user.followers = description_split[1].split(" ")[0]
   # end
+  
+  private
+  def image_type
+    if image.attached? == false
+      errors.add(:image, "is missing!")
+    end
+    if !image.content_type.in?(%w(image/jpeg image/jpg image/png))
+      errors.add(:image, 'Must be a JPEG, JPG or PNG file')
+    end
+  end
+
 end
