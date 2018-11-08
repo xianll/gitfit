@@ -103,9 +103,7 @@
           <% if user_signed_in? %>
             <% if current_user.profile != nil %>
                 <li class="nav-item">
-                  <div class="avatar-none">
-                    
-                  </div>
+                    <%= image_tag(current_user.profile.avatar, class: "avatar") %>
                 </li>
             <% end %>
           <% else %>
