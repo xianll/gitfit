@@ -49,8 +49,10 @@
       </article>
       <%= hidden_field_tag(:product_id, product.id)%>
 
-<% if current_user.orders.select{ |p| p.product_id == product.id }.length > 0 %>
-    <%=sanitize product.content%>
+<% if user_signed_in? %>
+  <% if current_user.orders.select{ |p| p.product_id == product.id }.length > 0 %>
+      <%=sanitize product.content%>
+  <% end %>
 <% end %>
 
       <% if current_user == @profile.user %>
