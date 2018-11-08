@@ -23,7 +23,7 @@ Please refer to the short answer question 1 & 2
 ![Profiles](docs/gitfit_profiles.png "gitfit Profiles Page")
 
 + In-broswer product editing capability.   
-![Built in editor](docs/gitfit_product_editor.png "Built-in Editor")
+![Built in editor](docs/gitfit_editor.png "Built-in Editor")
 
 + Providing your Instagram handle will pull your Instagram profile picture to serve as your gitfit profile picture.
 
