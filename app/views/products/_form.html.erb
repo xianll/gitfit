@@ -1,0 +1,51 @@
+<script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, :placeholder => "Program Name", class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, :placeholder => "what's it about?", class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+    <%= form.label :content %>
+  <div class="field form-group blacktext">
+    <%= form.text_area :content, id: 'editor', :placeholder => "Create your custom program here..", class: "blacktext" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price, value: number_with_precision((product.price||0)/100.0, :precision => 2), class: "form-control"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Product", class: "btn btn-primary" %>
+  </div>
+
+  <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<% end %>

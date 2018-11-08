@@ -1,0 +1,15 @@
+  <header class="index-header">
+    <!-- banner -->
+    <div class="text-light text-md-right text-center banner">
+      <h1 class="display-4 banner-heading">Welcome to <strong><span class="display-3">gitfit</span></strong></h1>
+      <p class="lead banner-par">Your new lifestyle starts here..</p>
+      <% if user_signed_in? %>
+        <%= link_to('BEGIN NOW', profiles_path, class: "btn btn-md btn-dark", role: "button")  %>
+      <% else %>
+        <%= link_to('JOIN NOW', new_user_registration_path, class: "btn btn-md btn-dark", role: "button")  %>
+      <% end %>
+
+    </div>
+    <!-- end of banner -->
+  </header>
+  <!-- end of header -->

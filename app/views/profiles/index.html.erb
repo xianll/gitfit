@@ -1,0 +1,22 @@
+<div class="container-profile">
+    <h1 class="text-center">Profiles</h1>
+    <hr class="hr-profile">
+
+        <% @profiles.each do |profile| %>
+          <div>
+            <%= image_tag(profile.image, class: "profile-image") %>
+            <%= profile.biography %>
+            <a href="https://www.instagram.com/<%= profile.instagram_username %>"target="_blank"><%= profile.instagram_username %></a>
+            <%= profile.age_bracket %>
+            <%= profile.gender %>
+            <%= profile.lifestyle %>
+            <%= profile.user.email %>
+            <%= link_to 'Show', profile %>
+            <% if current_user == profile.user %>
+              <%= link_to 'Edit', edit_profile_path(profile) %>
+              <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        <% end %> 
+        
+</div>
