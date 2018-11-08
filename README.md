@@ -49,9 +49,9 @@ Journey to becoming a seller as a user and unregistered user.
 Our end product ended up deviating from our initial wireframes but the basic UI functions remain the same.  
 ![Initial wireframes](docs/initial_wireframes.jpg "Wireframes")
 
-![Wireframes](docs/wireframes1.jpg)
+![Wireframes](docs/wireframe1.png)
 
-![Wireframes](docs/wireframes2.jpg)
+![Wireframes](docs/wireframe2.png)
 
 
 **Database Entity Relationship Diagrams**  
