@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: gitfit_production
-  username: gitfit
-  password: <%= ENV['GITFIT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
