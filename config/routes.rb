@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :profiles
   resources :products
-  post '/charges', to: 'user#index'
+  post '/charges', to: 'charges#create'
   resources :charges
   get '/user/:id', to: 'user#index'
   get '/user/:id/myproducts', to: 'user#myproducts'
