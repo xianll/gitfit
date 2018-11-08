@@ -9,7 +9,6 @@ class Profile < ApplicationRecord
   validates :gender, presence: true
 
   def grab_image
-    
     source = open("http://www.instagram.com/#{instagram_username}/"){|f|f.read}
     urls = URI.extract(source)
     url_pics =urls.select! { |item| item.include?('.jpg') }
