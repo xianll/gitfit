@@ -1,65 +1,46 @@
-<div class="container form-top">
-  <p id="notice"><%= notice %></p>
-  <aside>
-    <p>
-      <strong>Biography:</strong>
-      <%= @profile.biography %>
-    </p>
-
-    <p>
-      <strong>Instagram username:</strong>
-      <%= @profile.instagram_username %>
-    </p>
-
-    <p>
-      <strong>Age bracket:</strong>
-      <%= @profile.age_bracket %>
-    </p>
-
-    <p>
-      <strong>Gender:</strong>
-      <%= @profile.gender %>
-    </p>
-
-    <p>
-      <strong>Lifestyle:</strong>
-      <%= @profile.lifestyle %>
-    </p>
-
-    <p>
-      <strong>User:</strong>
-      <%= @profile.user.email %>
-    </p>
-  <aside>
-  <div>
-    <% @user.products.each do |product| %>
-      <%= image_tag(product.image, width: '300') %>
-      <%= product.title %>
-      <%= product.description %>
-      <%= link_to "View Product", product %>
-      <%= form_tag charges_path do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
+  <div class="container-profile">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="cardshow">
+                <%= image_tag(@profile.image, class: "card-img-top reframe center") %>
+                <div class="cardshow2">
+                    <div class="card-title">
+                        <h3 class="text-muted text-center"><%= @profile.instagram_username %></h3>
+                    </div>
+                    <div class="card-subtitle">
+                        <p class="text-center text-secondary"><%= @profile.lifestyle %></p>
+                    </div>
+                    <div class="card-subtitle">
+                        <p class="text-center text-secondary"><%= @profile.gender %></p>
+                    </div>
+                    <div class="card-subtitle">
+                        <p class="text-center text-secondary"><%=  @profile.age_bracket %></p>
+                    </div>
+                    <div class="card-subtitle">
+                        <p class="text-center text-secondary"><%=  @profile.biography %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div class="row">
+  <% @user.products.each do |product| %>
+  <div class="col-lg-9">
+          <div class="card">
+          <%= link_to product do %>
+              <%= image_tag(product.image, class: "card-img-top reframe center") %>
+          <% end %>
+              <div class="card-body">
+                  <div class="card-title">
+                      <h3 class="text-muted text-center"><%= product.title %></h3>
+                  </div>
+                  <div class="card-subtitle">
+                      <p class="text-center text-secondary"><%= product.description %></p>
+                  </div>
+                  <div class="text-center">
+                     <%= link_to "View Program", product, class: "btn buy" %>
+                  </div>
+              </div>
           </div>
-        <% end %>
-      </article>
-      <%= hidden_field_tag(:product_id, product.id)%>
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="<%product.title%>"
-              data-amount="<%product.price%>"
-              data-currency=AUD
-              data-locale="auto"></script>
-
-    <% end %>
-      <% end %>
-
-    <% if current_user == @profile.user %>
-      <%= link_to 'Edit', edit_profile_path(@profile) %> |
-      <td><%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-    <%= link_to 'Back', profiles_path %>
+  <% end %>
   </div>
 </div>

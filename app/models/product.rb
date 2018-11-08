@@ -8,7 +8,6 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :content, presence: true
   validate :image_type
-  # validate :file_type
 
   private
   def image_type

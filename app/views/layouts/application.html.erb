@@ -19,7 +19,7 @@
     <!-- navbar -->
     <div class="notice navbar navbar-expand-lg fixed-top nav-menu"><%= notice %>
     <% if user_signed_in? %>
-      <div href="" class="welcome">Welcome, <%= current_user.first_name %>!</div>
+      <div href="" class="welcome">Welcome, <%= current_user.email %>!</div>
     <% end %>
     </div>
     <nav class="navbar navbar-expand-lg fixed-top nav-menu">
@@ -100,17 +100,17 @@
             <%= link_to('Log In', new_user_session_path, class: "nav-link m-2 menu-item")  %>
           </li>
           <% end %>
-            <% if user_signed_in? && current_user.profile != nil %>
+          <% if user_signed_in? %>
+            <% if current_user.profile != nil %>
                 <li class="nav-item">
-                  <div class="avatar-none">
-                    
-                  </div>
+                    <%= image_tag(current_user.profile.avatar, class: "avatar") %>
                 </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to('Register Now', new_user_registration_path, class: "nav-link m-2 menu-item yellow-nav")  %>
-              </li>
             <% end %>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to('Register Now', new_user_registration_path, class: "nav-link m-2 menu-item yellow-nav")  %>
+            </li>
+          <% end %>
            
         </ul>
       </div>

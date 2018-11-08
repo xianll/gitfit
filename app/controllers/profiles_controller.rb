@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @user = @profile.user
+    
   end
 
   # GET /profiles/new
@@ -72,6 +73,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:biography, :instagram_username, :age_bracket, :gender, :lifestyle, :user_id)
+      params.require(:profile).permit(:biography, :instagram_username, :age_bracket, :gender, :lifestyle, :user_id, :avatar, :image)
     end
 end

@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: gitfit_development
-
+  # url: postgres://dhjmsbvzbtbdsj:5d84f44ac469a7f54f630201ddb9a155a88ee0cbd41e5456527436e2db574e01@ec2-184-73-222-192.compute-1.amazonaws.com:5432/d3nd7o9cf2te8o
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
