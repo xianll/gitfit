@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-       <%= stylesheet_link_tag    'profiles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'profiles', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'profiles', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
 
+<<<<<<< HEAD
   
 
   <nav class="navbar navbar-expand-md navbar-light bg-dark">
@@ -27,6 +28,34 @@
         <li class="nav-item"><%= link_to('All Profiles', profiles_path, class: "nav-link text-light text-uppercase font-weight-bold px-3")  %></li>
         <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Lifestyles</a>
             <div class="dropdown-menu">
+=======
+  <!-- header -->
+  <header>
+    <!-- navbar -->
+    <div class="notice navbar navbar-expand-lg fixed-top nav-menu"><%= notice %>
+    <% if user_signed_in? %>
+      <div href="" class="welcome">Welcome, <%= current_user.first_name %>!</div>
+    <% end %>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top nav-menu">
+      <a href="#" class="navbar-brand text-light"><span class="h1">gitfit</span></a>
+      <button class="navbar-toggler nav-button" type="button" data-toggle="collapse" data-target="#myNavbar">
+        <div class="bg-light line1"></div>
+        <div class="bg-light line2"></div>
+        <div class="bg-light line3"></div>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end text-uppercase font-weight-bold" id="myNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to('Home', root_path, class: "nav-link m-2 menu-item")  %>
+          </li>
+          <li class="nav-item">
+            <%= link_to('All Profiles', profiles_path, class: "nav-link m-2 menu-item")  %>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link m-2 menu-item dropdown-toggle" data-toggle="dropdown">Lifestyles</a>
+              <div class="dropdown-menu">
+>>>>>>> 3fbeddb9820992c3848ebbc8cce00d4f394c63b6
               <%= link_to('Bodybuilder', profiles_path, class: "dropdown-item")  %>
               <%= link_to('Fitness Model', profiles_path, class: "dropdown-item")  %>
               <%= link_to('Powerlifter', profiles_path, class: "dropdown-item")  %>
@@ -37,49 +66,77 @@
               <%= link_to('Vegan', profiles_path, class: "dropdown-item")  %>
               <%= link_to('Dad Bod', profiles_path, class: "dropdown-item")  %>
             </div>
-        </li>
-         <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Age Bracket</a>
-            <div class="dropdown-menu">
-              <%= link_to('18-25', profiles_path, class: "dropdown-item")  %>
-              <%= link_to('25-35', profiles_path, class: "dropdown-item")  %>
-              <%= link_to('35-45', profiles_path, class: "dropdown-item")  %>
-              <%= link_to('45+', profiles_path, class: "dropdown-item")  %>
-            </div>
-        </li>
-         <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="#">Gender</a>
-            <div class="dropdown-menu">
-              <%= link_to('Male', profiles_path, class: "dropdown-item")  %>
-              <%= link_to('Female', profiles_path, class: "dropdown-item")  %>
-              <%= link_to('Other', profiles_path, class: "dropdown-item")  %>
-        </li>
-      </ul>
-
-      <form class="form-inline ml-3">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
-          <div class="input-group-append">
-            <button type="button" class="btn"><i class="fas fa-search text-muted"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div>
-    <% if user_signed_in? %>
-    <p> Welcome <%= current_user.email %></p>
-      <% if current_user.profile == nil %>
-        <%= link_to('Become A Seller', new_profile_path)  %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
-      <% else %>
-        <%= link_to('Sell Your Program', new_product_path)  %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
-      <% end %>      
-    <% else %>
-      <%= link_to('Sell Your Program', new_user_registration_path)  %>
-      <%= link_to('Login', new_user_session_path)  %>  
-      <%= link_to('Sign Up', new_user_registration_path)  %>
-    <% end %>
-    </div>
-  </nav>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link m-2 menu-item dropdown-toggle" data-toggle="dropdown">Gender</a>
+              <div class="dropdown-menu">
+                <%= link_to('Male', profiles_path, class: "dropdown-item")  %>
+                <%= link_to('Female', profiles_path, class: "dropdown-item")  %>
+                <%= link_to('Other', profiles_path, class: "dropdown-item")  %>
+              </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link m-2 menu-item dropdown-toggle" data-toggle="dropdown">Age</a>
+              <div class="dropdown-menu">
+                <%= link_to('18-25', profiles_path, class: "dropdown-item")  %>
+                <%= link_to('25-35', profiles_path, class: "dropdown-item")  %>
+                <%= link_to('35-45', profiles_path, class: "dropdown-item")  %>
+                <%= link_to('45+', profiles_path, class: "dropdown-item")  %>
+              </div>
+          </li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <% if current_user.profile == nil %>
+                <%= link_to('Sell Program', new_profile_path, class: "nav-link m-2 menu-item")  %>
+              <% else %>
+                <%= link_to('Sell Program', new_product_path, class: "nav-link m-2 menu-item")  %>
+              <% end %>
+            <% else %>
+              <%= link_to('Sell Program', new_user_registration_path, class: "nav-link m-2 menu-item")  %>
+            <% end %>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link m-2 menu-item dropdown-toggle">My Account</a>
+                <div class="dropdown-menu">
+                  <% if current_user.profile == nil %>
+                    <%= link_to('Dashboard', root_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('Order History', root_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('Become A Seller', new_profile_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link m-2 menu-item") %>  
+                  <% else %>
+                    <%= link_to('Dashboard', root_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('Order History', root_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('My Profile', new_profile_path, class: "nav-link m-2 menu-item")  %>
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link m-2 menu-item") %>  
+                  <% end %>
+            </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to('Log In', new_user_session_path, class: "nav-link m-2 menu-item")  %>
+          </li>
+          <% end %>
+            <% if user_signed_in? && current_user.profile != nil %>
+                <li class="nav-item">
+                  <div class="avatar-none">
+                    
+                  </div>
+                </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to('Register Now', new_user_registration_path, class: "nav-link m-2 menu-item yellow-nav")  %>
+              </li>
+            <% end %>
+           
+        </ul>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+  </header>
+  <!-- end of header -->
+  <div id="bg">
+    <%= image_tag("background_image.jpg") %>
+  </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

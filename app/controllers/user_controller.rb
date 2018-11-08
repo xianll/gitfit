@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   
-  def account
+  def index
     @orders = Order.where(user_id: current_user.id)
   #   @orders_array = []
   #   @orders_array_new = @orders_array << @orders
