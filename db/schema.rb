@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_012436) do
+ActiveRecord::Schema.define(version: 2018_11_08_025833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2018_11_05_012436) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.integer "purchase_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -44,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_012436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "intensity_level"
+    t.text "content"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -59,6 +70,16 @@ ActiveRecord::Schema.define(version: 2018_11_05_012436) do
     t.index ["user_id"], name: "index_profiles_on_user_id", unique: true
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "order_id"
+    t.text "comment"
+    t.integer "rating"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,16 +90,13 @@ ActiveRecord::Schema.define(version: 2018_11_05_012436) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "first_name"
-    t.string "last_name"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "orders"
 end
